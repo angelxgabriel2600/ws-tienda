@@ -17,8 +17,8 @@ import javax.ejb.Local;
  */
 @Local
 public interface OrdenSessionBeanLocal {
-    public int agregarOrden(Orden orden);
-    public int actualizarOrden(Orden orden);
+    public int agregarOrden(int idOrden, int idProducto,int idCliente,int cantidad);
+    public int actualizarOrden(int idOrden, int idProducto,int idCliente,int cantidad);
     public int eliminarOrden(int idOrden);
     public List<Orden> mostrarOrden() ;
     public Orden mostrarOrdenPorId(int idOrden);

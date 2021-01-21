@@ -9,6 +9,7 @@ import dao.OrdenDao;
 import entities.Cliente;
 import entities.Orden;
 import entities.Producto;
+import java.util.Date;
 import java.util.List;
 import javax.ejb.Stateless;
 
@@ -21,13 +22,15 @@ public class OrdenSessionBean implements OrdenSessionBeanLocal {
 
     private OrdenDao dao=null;
     @Override
-    public int agregarOrden(Orden orden) {
+    public int agregarOrden(int idOrden, int idProducto,int idCliente,int cantidad) {
+        Orden orden=new Orden( idCliente, idProducto, cantidad,new Date());
         dao=new OrdenDao(); 
         return dao.agregarOrden(orden);
     }
 
     @Override
-    public int actualizarOrden(Orden orden) {
+    public int actualizarOrden(int idOrden, int idProducto,int idCliente,int cantidad) {
+        Orden orden=new Orden(idOrden, idCliente, idProducto, cantidad, new Date());
         dao=new OrdenDao(); 
         return dao.actualizarOrden(orden);
     }

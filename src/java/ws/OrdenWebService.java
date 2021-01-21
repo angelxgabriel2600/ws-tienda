@@ -29,13 +29,13 @@ public class OrdenWebService {
     // "Insert Code > Add Web Service Operation")
 
     @WebMethod(operationName = "agregarOrden")
-    public int agregarOrden(@WebParam(name = "orden") Orden orden) {
-        return ejbRef.agregarOrden(orden);
+    public int agregarOrden(@WebParam(name = "idOrden") int idOrden, @WebParam(name = "idProducto") int idProducto, @WebParam(name = "idCliente") int idCliente, @WebParam(name = "cantidad") int cantidad) {
+        return ejbRef.agregarOrden(idOrden, idProducto, idCliente, cantidad);
     }
 
     @WebMethod(operationName = "actualizarOrden")
-    public int actualizarOrden(@WebParam(name = "orden") Orden orden) {
-        return ejbRef.actualizarOrden(orden);
+    public int actualizarOrden(@WebParam(name = "idOrden") int idOrden, @WebParam(name = "idProducto") int idProducto, @WebParam(name = "idCliente") int idCliente, @WebParam(name = "cantidad") int cantidad) {
+        return ejbRef.actualizarOrden(idOrden, idProducto, idCliente, cantidad);
     }
 
     @WebMethod(operationName = "eliminarOrden")

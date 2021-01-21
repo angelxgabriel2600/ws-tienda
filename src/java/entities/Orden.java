@@ -57,7 +57,12 @@ public class Orden implements Serializable {
         this.cantidad = cantidad;
         this.fecha = fecha;
     }
-
+    public Orden( int idCliente, int idProducto, int cantidad, Date fecha) {
+        this.idCliente = idCliente;
+        this.idProducto = idProducto;
+        this.cantidad = cantidad;
+        this.fecha = fecha;
+    }
     public Integer getId() {
         return id;
     }
